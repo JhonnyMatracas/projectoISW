@@ -2,7 +2,7 @@
 
 # Use single quotes instead of double quotes to make it work with special-character passwords
 PASSWORD='123'
-PROJECTFOLDER='proyecto2'
+PROJECTFOLDER='projectoISW'
 
 sudo apt-get update
 sudo apt-get -y upgrade
