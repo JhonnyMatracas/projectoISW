@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link href="<?php echo URL; ?>uikit/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo URL; ?>uikit/css/uikit.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>uikit/css/custom.min.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>uikit/css/innova.css" rel="stylesheet">
 </head>
 <body class="tile-x-bg no-follow">
 <!-- HEADER -->
