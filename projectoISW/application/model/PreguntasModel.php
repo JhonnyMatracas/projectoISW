@@ -41,7 +41,8 @@ class PreguntasModel
 				   ':cuerpo'	=>	$datos['cuerpo']
 				  ];
 
-		$ssql = "INSERT INTO preguntas (asunto, cuerpo) VALUES (:asunto, :cuerpo)";
+		$ssql = "INSERT INTO preguntas (asunto, cuerpo) 
+				 VALUES (:asunto, :cuerpo)";
 		$query = $conexion->prepare($ssql);
 		$query->execute($params);
 

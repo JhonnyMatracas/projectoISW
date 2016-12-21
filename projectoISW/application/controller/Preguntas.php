@@ -7,7 +7,7 @@ class Preguntas extends Controller
 
 		$preguntas = PreguntasModel::getAll();
 
-		$this->view->render('preguntas/todas', array('preguntas' => $preguntas));
+		echo $this->view->render('preguntas/todas', array('preguntas' => $preguntas));
 
 	}
 
@@ -15,7 +15,7 @@ class Preguntas extends Controller
 
 		if(!$_POST) {
 
-			$this->view->render('preguntas/formulariopregunta');
+			echo $this->view->render('preguntas/formulariopregunta');
 
 		} else {
 
@@ -31,11 +31,11 @@ class Preguntas extends Controller
 
 			if ( PreguntasModel::insert($datos) ) {
 
-				$this->view->render('preguntas/preguntainsertada');
+				echo $this->view->render('preguntas/preguntainsertada');
 
 			} else {
 
-				$this->view->render('preguntas/formulariopregunta',
+				echo $this->view->render('preguntas/formulariopregunta',
 					array(
 						'errores'	=>	array('Error al insertar'),
 						'datos'		=>	$_POST
@@ -55,7 +55,7 @@ class Preguntas extends Controller
 			
 			if ($pregunta) {
 
-				$this->view->render('preguntas/formulariopregunta', [
+				echo $this->view->render('preguntas/formulariopregunta', [
 						'datos'		=>	get_object_vars($pregunta),
 						'accion'	=>	'editar'
 					]);
@@ -79,7 +79,7 @@ class Preguntas extends Controller
 
 			} else {
 
-				$this->view->render('preguntas/formulariopregunta', [
+				echo $this->view->render('preguntas/formulariopregunta', [
 					'errores'	=>	['Error al editar'],
 					'datos'		=>	$_POST,
 					'accion'	=>	'editar'

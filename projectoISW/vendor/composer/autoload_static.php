@@ -10,6 +10,20 @@ class ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e
         '6bc45d0537e6858fd179bdbc31d62c79' => __DIR__ . '/..' . '/raveren/kint/Kint.class.php',
     );
 
+    public static $prefixLengthsPsr4 = array (
+        'L' => 
+        array (
+            'League\\Plates\\' => 14,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'League\\Plates\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/plates/src',
+        ),
+    );
+
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/../..' . '/application/core',
         1 => __DIR__ . '/../..' . '/application/model',
@@ -30,6 +44,8 @@ class ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitcd77f3d9b4b5aa5d01c594cfa8d2f28e::$classMap;
 

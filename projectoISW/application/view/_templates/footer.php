@@ -16,6 +16,5 @@
 
     <!-- our JavaScript -->
     <script src="<?php echo URL; ?>js/application.js"></script>
-    <script src="<?php echo URL; ?>js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@ class Songs extends Controller
     {
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_add_song"])) {
-            // do addSong() in model/Model.php
+            // do addSong() in model/model.php
             $this->model->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
 
@@ -60,7 +60,7 @@ class Songs extends Controller
     {
         // if we have an id of a song that should be deleted
         if (isset($song_id)) {
-            // do deleteSong() in model/Model.php
+            // do deleteSong() in model/model.php
             $this->model->deleteSong($song_id);
         }
 
@@ -77,7 +77,7 @@ class Songs extends Controller
     {
         // if we have an id of a song that should be edited
         if (isset($song_id)) {
-            // do getSong() in model/Model.php
+            // do getSong() in model/model.php
             $song = $this->model->getSong($song_id);
 
             // in a real application we would also check if this db entry exists and therefore show the result or
@@ -105,7 +105,7 @@ class Songs extends Controller
     {
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_update_song"])) {
-            // do updateSong() from model/Model.php
+            // do updateSong() from model/model.php
             $this->model->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
         }
 

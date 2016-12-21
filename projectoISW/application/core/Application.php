@@ -23,7 +23,7 @@ class Application
         // check for controller: no controller given ? then load start-page
         if (!$this->url_controller) {
 
-            require APP . 'controller/Home.php';
+            require APP . 'controller/home.php';
             $page = new Home();
             $page->index();
 
@@ -52,11 +52,17 @@ class Application
                     $this->url_controller->index();
                 }
                 else {
-                    header('location: ' . URL . 'problem');
+                    header('HTTP/1.0 404 Not Found');
+                    require APP . 'controller/problem.php';
+                    $cont_error = new Problem("Esa acción no existe");
+                    $cont_error->index();
                 }
             }
         } else {
-            header('location: ' . URL . 'problem');
+            header('HTTP/1.0 404 Not Found');
+            require APP . 'controller/problem.php';
+            $cont_error = new Problem("Ese controlador no existe");
+            $cont_error->index();
         }
     }
 

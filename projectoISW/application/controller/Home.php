@@ -16,8 +16,8 @@ class Home extends Controller
      */
     public function index()
     {
-        // load views
-        $this->view->render("home/index");
+        $this->view->addData(['titulo' => 'Portada']);
+        echo $this->view->render('home/index', ['titulo' => 'Estás en la Portada']);
     }
 
     /**
@@ -28,7 +28,9 @@ class Home extends Controller
     public function exampleOne()
     {
         // load views
-       $this->view->render("home/example_one");
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/example_one.php';
+        require APP . 'view/_templates/footer.php';
     }
 
     /**
@@ -39,7 +41,8 @@ class Home extends Controller
     public function exampleTwo()
     {
         // load views
-        $this->view->render("home/example_two");
-
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/example_two.php';
+        require APP . 'view/_templates/footer.php';
     }
 }
