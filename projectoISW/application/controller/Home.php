@@ -16,7 +16,7 @@ class Home extends Controller
      */
     public function index()
     {
-        $this->view->addData(['titulo' => 'Portada']);
+        $this->view->addData(['titulo' => 'Innova Side Store']);
         echo $this->view->render('home/index', ['titulo' => 'Estás en la Portada']);
     }
 
