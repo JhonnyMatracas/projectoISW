@@ -28,9 +28,9 @@ function getScripts(o, t) {
     $.importJS(r, {
         cache: t
     }).done(function() {
-        console.log("SUCCESS: loaded script >> " + r)
+        console.log("ÉXITO al cargar el script >> " + r)
     }).fail(function(o) {
-        console.log("ERROR: can't load script >> " + r + " << " + o.statusText)
+        console.log("ERROR: no se puede cargar el script >> " + r + " << " + o.statusText)
     })
   }
 }
@@ -44,8 +44,11 @@ jQuery.importJS = function(o, t) {
 
 // Scripts for loading
 // =========================================================================
-var path = "uikit/"; // Paths are relative to the page loading this script!
+var path = "http://fernandomfdz.ddns.net/proyectos/store/uikit/"; // Paths are relative to the page loading this script!
 var scripts = [
+  "js/innova.js",
+  "js/list.js",
+  "js/product-carrousel.js",
   "js/uikit-utils.js",
   "js/jquery.bxslider-rahisified.js",
   "js/jquery-ui.min.js",
@@ -53,10 +56,17 @@ var scripts = [
   "bootstrap/js/bootstrap.min.js",
   "js/jquery-scrollto.js",
   "js/jquery.prettyPhoto.js",
+  "js/amcharts/amcharts.js",
+  "js/amcharts/serial.js",
+  "js/amcharts/pie.js",
+  "js/summernote.js",
+  "js/summernote-es-ES.js",
+  "js/jquery.bxslider.js",
+  "js/progressbar.js",
   "js/wow.min.js",
   "js/theme.js",
 ];
 
 // IMPORTANT: To force caching change false to true
 // ==========================================================================
-getScripts(scripts, false);
+getScripts(scripts, true);
