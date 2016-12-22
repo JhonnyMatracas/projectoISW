@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <?= $this->insert('partials/head/css') ?>
+
+
 </head>
 
 <body class="tile-x-bg no-follow">
@@ -19,6 +21,7 @@
     <!-- /CONTENIDO -->
 
     <!-- FOOTER -->
+
     <?= $this->insert('partials/footer/main-footer') ?>
     <!-- /FOOTER -->
 
@@ -27,7 +30,6 @@
     <?= $this->insert('partials/head/js') ?>
 
 
-    <!-- our JavaScript -->
-    <script src="<?php echo URL; ?>js/application.js"></script>
+
 </body>
 </html>

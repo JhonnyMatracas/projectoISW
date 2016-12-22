@@ -44,27 +44,30 @@ jQuery.importJS = function(o, t) {
 
 // Scripts for loading
 // =========================================================================
-var path = "http://fernandomfdz.ddns.net/proyectos/store/uikit/"; // Paths are relative to the page loading this script!
+var path = "uikit/"; // Paths are relative to the page loading this script!
 var scripts = [
-  "js/innova.js",
-  "js/list.js",
-  "js/product-carrousel.js",
-  "js/uikit-utils.js",
-  "js/jquery.bxslider-rahisified.js",
-  "js/jquery-ui.min.js",
-  "js/highlight.pack.js",
-  "bootstrap/js/bootstrap.min.js",
-  "js/jquery-scrollto.js",
-  "js/jquery.prettyPhoto.js",
-  "js/amcharts/amcharts.js",
-  "js/amcharts/serial.js",
-  "js/amcharts/pie.js",
-  "js/summernote.js",
-  "js/summernote-es-ES.js",
-  "js/jquery.bxslider.js",
-  "js/progressbar.js",
-  "js/wow.min.js",
-  "js/theme.js",
+    "plugins/owl-carousel/owl.carousel.min.js",
+    "js/innova.js",
+    "js/list.js",
+    "js/product-carrousel.js",
+    "js/uikit-utils.js",
+    "js/jquery.bxslider-rahisified.js",
+    "js/jquery-ui.min.js",
+    "js/highlight.pack.js",
+    "bootstrap/js/bootstrap.min.js",
+    "js/jquery-scrollto.js",
+    "js/jquery.prettyPhoto.js",
+    "js/amcharts/amcharts.js",
+    "js/amcharts/serial.js",
+    "js/amcharts/pie.js",
+    "js/summernote.js",
+    "js/summernote-es-ES.js",
+    "js/jquery.bxslider.js",
+    "js/progressbar.js",
+    "js/wow.min.js",
+    "js/theme.js",
+    "plugins/mega-dropdown/js/jquery.menu-aim.js",
+    "plugins/mega-dropdown/js/main.js",
 ];
 
 // IMPORTANT: To force caching change false to true

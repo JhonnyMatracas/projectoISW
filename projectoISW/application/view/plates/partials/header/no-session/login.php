@@ -10,7 +10,7 @@
             <button id="xs-registrate" aria-expanded="false" class="btn btn-outline-menu visible-xs pull-right" style="margin-top:8px;" data-toggle="collapse" data-target="#registrate"><i class="ti ti-pencil-alt"></i></button>
             <button id="xs-iniciar-sesion" class="dropdown-toggle btn btn-outline-menu visible-xs pull-right" style="margin-top:8px;" data-toggle="collapse" data-target="#iniciar-sesion"><i class="ti ti-user"></i></button>
             <a data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-brand navbar-toggle visible-xs pull-left" href="#"><i class="fa fa-bars "></i></a>
-            <img class="visible-xs" src="<?=URL?><?php echo $logo->src ;?>" data-toggle="tooltip" style="margin-left:-20px;width:114px; height:auto;"  data-placement="bottom" title="<?php echo $logo->alt ;?> Store">
+            <img class="visible-xs" src="<?=URL?>pic/store/img/header/1-logo/logolisto.png" data-toggle="tooltip" style="margin-left:-20px;width:114px; height:auto;"  data-placement="bottom" title="<?php echo $logo->alt ;?> Store">
         </div>
         <!-- /Header-->
         <div id="registrate" class="collapse">
@@ -75,3 +75,4 @@
         </div>
 
         <!-- Collapse -->
+

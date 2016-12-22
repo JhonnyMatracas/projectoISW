@@ -114,6 +114,7 @@
                     </li>
 
                     <li class="dropdown has-panel li-nosession">
+
                         <a aria-expanded="false" href="<?=URL?>index/signup"><i class="fa fa-edit hidden-lg"></i><i class="hidden-xs hidden-sm hidden-md" style="font-style: normal; text-transform: capitalize;"> Registrate</i></a>
 
                     </li>
