@@ -13,18 +13,30 @@
 
 <body class="tile-x-bg no-follow">
 
+<!-- /HEADER -->
+<div class="page-wrapper shadow">
+    <!-- Header Block
+    ============================================== -->
+    <header class="header-block">
+        <!--  Main Header -->
+        <?= $this->insert('partials/header/header') ?>
 
-    <?= $this->insert('partials/header/header') ?>
+    </header>
+    <!-- /Header Block
+============================================== -->
+</div>
+<!-- /HEADER -->
+
 
     <!-- CONTENIDO -->
     <?= $this->section('content') ?>
     <!-- /CONTENIDO -->
 
-    <!-- FOOTER -->
-
-    <?= $this->insert('partials/footer/main-footer') ?>
-    <!-- /FOOTER -->
-
+    <?php if ($_SERVER['REQUEST_URI'] != '/signup'):?>
+        <!-- FOOTER -->
+        <?= $this->insert('partials/footer/main-footer') ?>
+        <!-- /FOOTER -->
+    <?php endif;?>
     <!-- JS -->
     <!-- please note: The JavaScript files are loaded in the footer to speed up page construction -->
     <?= $this->insert('partials/head/js') ?>

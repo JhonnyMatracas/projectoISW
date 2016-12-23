@@ -8,25 +8,6 @@
 </ul>
 <br>
 <!-- /Nav Tabs -->
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        var $slider =$('.bxslider1');
-
-
-        var slider = $slider.bxSlider({
-            adaptiveHeight: true,
-            mode: 'horizontal',
-            nextText: '',
-            prevText: '',
-            auto: true,
-            pause: 5000
-        });
-
-    });
-
-
-</script>
 
 <!-- /Intro Block
 ============================================ -->

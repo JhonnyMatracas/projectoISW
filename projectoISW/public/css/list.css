@@ -42,6 +42,7 @@
   color: #707070;
 }
 .annotated-list input {
+  text-align: center;
   border-radius: 25px;
   padding: 7px 14px;
   background-color: transparent;
@@ -217,4 +218,7 @@ input:focus {
 
 .margin-left-2{
   margin-left: 2%;
+}
+.margin-top-10{
+  margin-top: 10px;
 }

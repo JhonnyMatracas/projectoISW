@@ -1,128 +1,247 @@
-    <div class="collapse navbar-collapse navbar-absolute navbar-ex1-collapse">
-        <!-- Navbar Center -->
-        <ul class="nav navbar-nav navbar-center line-top line-pcolor case-c">
+<nav class="cd-dropdown">
+    <h2>Title</h2>
+    <a href="#0" class="cd-close">Close</a>
+    <ul class="cd-dropdown-content">
+        <li class="has-children">
+            <a href="http://codyhouse.co/?p=748"> Clothing</a>
 
-            <li class="active"><a href="<?=URL?>index/home">home</a></li>
+            <ul class="cd-secondary-dropdown is-hidden">
+                <li class="go-back"><a href="#0">Menu</a></li>
+                <li class="see-all"><a href="http://codyhouse.co/?p=748">All Clothing</a></li>
+                <li class="has-children">
+                    <a href="http://codyhouse.co/?p=748">Accessories</a>
 
-            <!--   <li class="dropdown dropdown-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Maquillaje<i class="fa fa-angle-down toggler"></i></a> -->
-            <!-- Mega Menu -->
-            <div class="mega-menu dropdown-menu">
-                <!-- Row -->
-                <div class="row">
+                    <ul class="is-hidden">
+                        <li class="go-back"><a href="#0">Clothing</a></li>
+                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Accessories</a></li>
+                        <li class="has-children">
+                            <a href="#0">Beanies</a>
 
-                    <!-- col -->
-                    <div class="col-md-3">
-                        <img class="featured-img hidden-xs hidden-sm" src="<?=URL?>images/menu-pic.jpg" alt="">
-                    </div>
-                    <!-- /col -->
+                            <ul class="is-hidden">
+                                <li class="go-back"><a href="#0">Accessories</a></li>
+                                <li class="see-all"><a href="http://codyhouse.co/?p=748">All Benies</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Caps &amp; Hats</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Gifts</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Scarves &amp; Snoods</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#0">Caps &amp; Hats</a>
 
-                    <!-- col -->
-                    <div class="col-md-3">
-                        <h5>shop pages</h5>
-                        <ul class="links">
-                            <li><a href="category.html">category</a></li>
-                            <li><a href="category2.html">category #2</a></li>
-                            <li><a href="product.html">product details</a></li>
-                            <li><a href="cart.html">cart</a></li>
-                            <li><a href="checkout.html">checkout</a></li>
-                        </ul>
-                    </div>
-                    <!-- /col -->
+                            <ul class="is-hidden">
+                                <li class="go-back"><a href="#0">Accessories</a></li>
+                                <li class="see-all"><a href="http://codyhouse.co/?p=748">All Caps &amp; Hats</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Beanies</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Caps</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://codyhouse.co/?p=748">Glasses</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Gloves</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Jewellery</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Scarves</a></li>
+                    </ul>
+                </li>
 
-                    <!-- col -->
-                    <div class="col-md-3">
-                        <h5>common pages</h5>
-                        <ul class="links">
-                            <li><a href="page.html">Typical Page</a></li>
-                            <li><a href="error-404.html">404</a></li>
-                            <li><a href="error-generic.html">generic error</a></li>
-                            <li><a href="contact.html">contact</a></li>
-                            <li><a href="faq.html">faq</a></li>
-                        </ul>
-                    </div>
-                    <!-- /col -->
+                <li class="has-children">
+                    <a href="http://codyhouse.co/?p=748">Bottoms</a>
 
-                    <!-- col -->
-                    <div class="col-md-3">
-                        <h5>other pages</h5>
-                        <ul class="links">
-                            <li><a href="blog.html">blog</a></li>
-                            <li><a href="blog-post.html">single post</a></li>
-                            <li><a href="login.html">login</a></li>
-                            <li><a href="register.html">register</a></li>
-                        </ul>
-                    </div>
-                    <!-- /col -->
-                </div>
-                <!-- /Row -->
-            </div>
-            <!-- /Mega Menu -->
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pide Cita<i class="fa fa-angle-down toggler"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="uikit/index.html">Elements + Modules</a></li>
-                    <li><a href="uikit/index.html#bxslider.demo?viewer=ajax">Sliders</a></li>
-                    <li><a href="uikit/index.html#animations.demo?viewer=ajax">Animations</a></li>
-                </ul>
-            </li>
+                    <ul class="is-hidden">
+                        <li class="go-back"><a href="#0">Clothing</a></li>
+                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Bottoms</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Casual Trousers</a></li>
+                        <li class="has-children">
+                            <a href="#0">Jeans</a>
 
-        </ul>
-        <!-- /Navbar Center -->
+                            <ul class="is-hidden">
+                                <li class="go-back"><a href="#0">Bottoms</a></li>
+                                <li class="see-all"><a href="http://codyhouse.co/?p=748">All Jeans</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Ripped</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Skinny</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Slim</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Straight</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#0">Leggings</a></li>
+                        <li><a href="#0">Shorts</a></li>
+                    </ul>
+                </li>
 
-    </div>
-    <!-- /Collapse -->
-    <!-- Navbar btn-group -->
-    <div class="navbar-btn-group btn-group navbar-right no-margin-r-xs hidden-xs">
+                <li class="has-children">
+                    <a href="http://codyhouse.co/?p=748">Jackets</a>
 
-        <!-- Nav Side -->
-        <nav class="bottom hnav hnav-ruled white-bg boxed-section"" role="navigation" >
-            <!-- Dont Collapse -->
-            <div class="navbar-dont-collapse no-toggle" >
+                    <ul class="is-hidden">
+                        <li class="go-back"><a href="#0">Clothing</a></li>
+                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Jackets</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Blazers</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Bomber jackets</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Denim Jackets</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Duffle Coats</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Leather Jackets</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Parkas</a></li>
+                    </ul>
+                </li>
 
-                <!-- Nav Right -->
-                <ul class="nav navbar-nav navbar-right case-u active-bcolor navbar-center-xs">
-                    <li class="dropdown has-panel li-nosession">
-                        <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user hidden-lg"></i><i class="hidden-xs hidden-sm hidden-md" style="font-style: normal; text-transform: capitalize;"> Inicia Sesion</i><i class="fa fa-angle-down toggler hidden-xs hidden-sm"></i></a>
+                <li class="has-children">
+                    <a href="http://codyhouse.co/?p=748">Tops</a>
 
-                        <!-- Dropdown Panel -->
-                        <div class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" data-keep-open="true">
+                    <ul class="is-hidden">
+                        <li class="go-back"><a href="#0">Clothing</a></li>
+                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Tops</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Cardigans</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Coats</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Polo Shirts</a></li>
+                        <li><a href="http://codyhouse.co/?p=748">Shirts</a></li>
+                        <li class="has-children">
+                            <a href="#0">T-Shirts</a>
 
-                            <form accept-charset="UTF-8" role="form" method="post" action="<?=URL?>index/processlogin">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input class="form-control" placeholder="Usuario" name="mail" type="text" placeholder="Username o Email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="checkbox-inline"><input value="" type="checkbox">Recuérdame </label>
-                                    </div>
-                                    <input class="btn btn-primary btn-block" type="submit" value="Iniciar Sesion">
-                                </fieldset>
-                            </form>
+                            <ul class="is-hidden">
+                                <li class="go-back"><a href="#0">Tops</a></li>
+                                <li class="see-all"><a href="http://codyhouse.co/?p=748">All T-shirts</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Plain</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Print</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Striped</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Long sleeved</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://codyhouse.co/?p=748">Vests</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .cd-secondary-dropdown -->
+        </li> <!-- .has-children -->
 
-                        </div>
-                        <!-- /Dropdown Panel -->
-                    </li>
+        <li class="has-children">
+            <a href="http://codyhouse.co/?p=748">Gallery</a>
 
-                    <li class="dropdown has-panel li-nosession">
+            <ul class="cd-dropdown-gallery is-hidden">
+                <li class="go-back"><a href="#0">Menu</a></li>
+                <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Gallery</a></li>
+                <li>
+                    <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
+                        <img src="<?=URL?>uikit/plugins/mega-dropdown/img/img.png" alt="Product Image">
+                        <h3>Product #1</h3>
+                    </a>
+                </li>
 
-                        <a aria-expanded="false" href="<?=URL?>index/signup"><i class="fa fa-edit hidden-lg"></i><i class="hidden-xs hidden-sm hidden-md" style="font-style: normal; text-transform: capitalize;"> Registrate</i></a>
+                <li>
+                    <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
+                        <img src="<?=URL?>uikit/plugins/mega-dropdown/img/img.png" alt="Product Image">
+                        <h3>Product #2</h3>
+                    </a>
+                </li>
 
-                    </li>
-                </ul>
-                <!-- /Nav Right-->
+                <li>
+                    <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
+                        <img src="<?=URL?>uikit/plugins/mega-dropdown/img/img.png" alt="Product Image">
+                        <h3>Product #3</h3>
+                    </a>
+                </li>
 
-            </div>
-            <!-- /Dont Collapse -->
-        </nav>
-        <!-- /Nav Side -->
-    </div>
+                <li>
+                    <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
+                        <img src="<?=URL?>uikit/plugins/mega-dropdown/img/img.png" alt="Product Image">
+                        <h3>Product #4</h3>
+                    </a>
+                </li>
+            </ul> <!-- .cd-dropdown-gallery -->
+        </li> <!-- .has-children -->
+
+        <li class="has-children">
+            <a href="http://codyhouse.co/?p=748">Services</a>
+            <ul class="cd-dropdown-icons is-hidden">
+                <li class="go-back"><a href="#0">Menu</a></li>
+                <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>
+                <li>
+                    <a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
+                        <h3>Service #1</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
+                        <h3>Service #2</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
+                        <h3>Service #3</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
+                        <h3>Service #4</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
+                        <h3>Service #5</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-6" href="http://codyhouse.co/?p=748">
+                        <h3>Service #6</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-7" href="http://codyhouse.co/?p=748">
+                        <h3>Service #7</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-8" href="http://codyhouse.co/?p=748">
+                        <h3>Service #8</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-9" href="http://codyhouse.co/?p=748">
+                        <h3>Service #9</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-10" href="http://codyhouse.co/?p=748">
+                        <h3>Service #10</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-11" href="http://codyhouse.co/?p=748">
+                        <h3>Service #11</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="cd-dropdown-item item-12" href="http://codyhouse.co/?p=748">
+                        <h3>Service #12</h3>
+                        <p>This is the item description</p>
+                    </a>
+                </li>
+
+            </ul> <!-- .cd-dropdown-icons -->
+        </li> <!-- .has-children -->
+
+        <li class="cd-divider">Divider</li>
+
+        <li><a href="http://codyhouse.co/?p=748">Page 1</a></li>
+        <li><a href="http://codyhouse.co/?p=748">Page 2</a></li>
+        <li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
+    </ul> <!-- .cd-dropdown-content -->
+</nav> <!-- .cd-dropdown -->

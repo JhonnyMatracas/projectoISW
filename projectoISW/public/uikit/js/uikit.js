@@ -67,7 +67,8 @@ var scripts = [
     "js/wow.min.js",
     "js/theme.js",
     "plugins/mega-dropdown/js/jquery.menu-aim.js",
-    "plugins/mega-dropdown/js/main.js",
+    "plugins/mega-dropdown/js/modernizr.js",
+    "plugins/mega-dropdown/js/main.js"
 ];
 
 // IMPORTANT: To force caching change false to true
