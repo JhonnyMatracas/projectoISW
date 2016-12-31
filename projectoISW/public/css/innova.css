@@ -7580,6 +7580,10 @@ div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_
 }
 
 .li-nosession{
+    transition: all 0.2s ease-in-out;
+}
+
+.li-nosession:hover{
 
     border-bottom:1px solid #D64C00;
     transition: all 0.2s ease-in-out;
