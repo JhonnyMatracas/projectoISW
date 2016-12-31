@@ -629,7 +629,7 @@ Main Components
     left: 15px;
     height: 1px;
     width: 520px;
-    background-color: #ffffff;
+    background-color: #efefef;
   }
   .cd-dropdown-content .cd-secondary-dropdown > li > a {
     color: #e6343d;
@@ -909,7 +909,7 @@ Main Components
 }
 .has-children > a::before, .has-children > a::after, .go-back a::before, .go-back a::after {
   /* arrow icon in CSS - for element with nested unordered lists */
-    visibility: hidden;
+    /*visibility: hidden;*/
   content: '';
   position: absolute;
   top: 50%;
@@ -920,6 +920,8 @@ Main Components
   background: #ffffff;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-background-size:;
+
 }
 .has-children > a::before, .go-back a::before {
   -webkit-transform: rotate(45deg);
@@ -937,7 +939,7 @@ Main Components
 }
 @media only screen and (min-width: 1024px) {
   .has-children > a::before, .has-children > a::after, .go-back a::before, .go-back a::after {
-    background: #b3b3b3;
+    background: #eeeeee;
   }
 }
 

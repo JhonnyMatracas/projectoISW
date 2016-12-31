@@ -11,7 +11,7 @@ class Signup extends Controller
 
     public function index()
     {
-        $this->view->addData(['titulo' => 'Empìeza a Innovar || Innova Side World']);
+        $this->view->addData(['titulo' => 'Comienza a Innovar · Innova Side World']);
         echo $this->view->render('signup/index');
     }
 }

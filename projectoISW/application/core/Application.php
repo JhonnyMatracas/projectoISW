@@ -23,16 +23,16 @@ class Application
         // check for controller: no controller given ? then load start-page
         if (!$this->url_controller) {
 
-            require APP . 'controller/home.php';
+            require APP . 'controller/Home.php';
             $page = new Home();
             $page->index();
 
-        } elseif (file_exists(APP . 'controller/' . $this->url_controller . '.php')) {
+        } elseif (file_exists(APP . 'controller/' . ucfirst($this->url_controller) . '.php')) {
             // here we did check for controller: does such a controller exist ?
 
             // if so, then load this file and create this controller
             // example: if controller would be "car", then this line would translate into: $this->car = new car();
-            require APP . 'controller/' . $this->url_controller . '.php';
+            require APP . 'controller/' . ucfirst($this->url_controller) . '.php';
             $this->url_controller = new $this->url_controller();
 
             // check for method: does such a method exist in the controller ?
@@ -53,14 +53,14 @@ class Application
                 }
                 else {
                     header('HTTP/1.0 404 Not Found');
-                    require APP . 'controller/problem.php';
+                    require APP . 'controller/Problem.php';
                     $cont_error = new Problem("Esa acción no existe");
                     $cont_error->index();
                 }
             }
         } else {
             header('HTTP/1.0 404 Not Found');
-            require APP . 'controller/problem.php';
+            require APP . 'controller/Problem.php';
             $cont_error = new Problem("Ese controlador no existe");
             $cont_error->index();
         }
