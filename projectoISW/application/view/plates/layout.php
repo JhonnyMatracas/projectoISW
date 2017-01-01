@@ -27,6 +27,8 @@
 </div>
 <!-- /HEADER -->
 
+<?= $this->insert('partials/feedback') ?>
+
 
     <!-- CONTENIDO -->
     <?= $this->section('content') ?>

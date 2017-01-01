@@ -1,6 +1,6 @@
 <?php
 
-class TemplatesFactory 
+class TemplatesFactory
 {
 	private static $templates;
 
@@ -16,8 +16,6 @@ class TemplatesFactory
 		}
 		return TemplatesFactory::$templates;
 	}
-
-
 
 
 }

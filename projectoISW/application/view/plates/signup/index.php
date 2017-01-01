@@ -1,4 +1,6 @@
 <?php $this->layout('layout') ?>
+
+<div>
     <div class="product-container" style="height: 80rem;">
         <!-- Vcenter -->
         <div class="vcenter" >
@@ -6,7 +8,7 @@
             <div class="vcenter-this">
                 <!-- Container -->
 
-                <div class="container">
+                <div class="container" style="margin-top: -20%">
                     <!-- Error Block -->
 
                     <div class="error-block wider">
@@ -24,7 +26,7 @@
                         <div class="right">
                             <div class="col-xs-12">
 
-                                <form accept-charset="UTF-8" role="form" method="post" action="http://fernandomfdz.ddns.net/proyectos/store/index/action/signup">
+                                <form accept-charset="UTF-8" role="form" method="post" action="">
                                     <fieldset>
                                         <div class="form-group">
                                             <em class="help" id="nick_error" style="font-style: normal; color: red" hidden></em>
@@ -32,7 +34,7 @@
 
                                                 <div class="input-group-addon"><i class="fa fa-ticket"></i></div>
                                                 <div class="col-md-6" style="padding:0px">
-                                                    <input type="text" name="nick" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
+                                                    <input type="text" name="nick" value="<?=($_POST) ? $nick :'';?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
                                                 </div>
                                                 <div class="col-md-3" id="available_nick" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
@@ -118,3 +120,4 @@
         <!-- /Vcenter -->
     </div>
 
+</div>

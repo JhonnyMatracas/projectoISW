@@ -9,9 +9,15 @@
 class Signup extends Controller
 {
 
+
     public function index()
     {
-        $this->view->addData(['titulo' => 'Comienza a Innovar · Innova Side World']);
-        echo $this->view->render('signup/index');
+        if(!$_POST):
+            parent::Go('Comienza a Innovar· Innova Side World','signup/index');
+        else:
+            Validate::Nick($_POST['nick']);
+            parent::Go('Comienza a Innovar · Innova Side World', 'signup/index');
+
+        endif;
     }
 }

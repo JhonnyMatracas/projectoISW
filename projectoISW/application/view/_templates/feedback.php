@@ -8,6 +8,8 @@
 			<?php endforeach ?>
 		</ul>
 	</div>
+
+    <?php Session::set('feedback_negative',null)?>
 <?php endif ?>	
 
 <?php if (! is_null(Session::get("feedback_positive")) &&
@@ -20,4 +22,5 @@
 			<?php endforeach ?>
 		</ul>
 	</div>
+    <?php Session::set('feedback_positive', null);?>
 <?php endif ?>
