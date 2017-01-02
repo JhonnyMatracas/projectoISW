@@ -34,6 +34,12 @@ class Session
 
 	}
 
+
+    public static function addOne($key,$subkey, $value) {
+
+        $_SESSION[$key][$subkey] = $value;
+
+    }
 	public static function destroy() {
 
 		session_destroy();

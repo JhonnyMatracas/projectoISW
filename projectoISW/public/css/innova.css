@@ -7652,3 +7652,12 @@ div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_
     top:10px;
     margin-left: 38%;
 }
+
+.alert-feedback{
+    width: 400px;
+    float: left;
+    position: absolute;
+    top: 7.2%;
+    left: 20%;
+    opacity: 0.8;
+}

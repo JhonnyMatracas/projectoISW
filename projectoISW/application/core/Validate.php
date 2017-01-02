@@ -18,7 +18,6 @@ class Validate
     public static function Nick($a = null)
     {
         $error = false;
-
         if (isset($a)){
             if (!empty($a)){
                 $usrname = self::clean($a);
@@ -48,25 +47,81 @@ class Validate
             ErrorForm::addNegative("NICK: No has puesto nada");
             $error = true;
         }
+        Memory::keep('nick',$a);
+
         if (!$error){
-            Memory::keep('nick',$a);
-            ErrorForm::addPositive('NICK: Todo bien!');
+
+            ErrorForm::addFeedback_Form('nick', true);
             return true;
         }else{
-            Memory::keep('nick',$a);
+            ErrorForm::addFeedback_Form('nick', false);
             return false;
         }
 
     }
     public static function Nombre($a = null)
     {
-        $a = self::clean($a);
+        $error = false;
+        if (isset($a)){
+            if (!empty($a)){
+                $a = self::clean($a);
+                $patron = "/^[a-zA-ZáéíÁÉÍÓ]+$/";
+                if (strlen($a) < 2) {
+                    ErrorForm::addNegative("NOMBRE: Debe contener más de 2 caracteres");
+                    $error = true;
+                }elseif (! preg_match($patron,$a)) {
+                    ErrorForm::addNegative("NOMBRE: Debe contener letras");
+                    $error = true;
+                }
+            }else{
+                ErrorForm::addNegative("NOMBRE: Está vacío");
+                $error = true;
+            }
+        }else{
+            ErrorForm::addNegative("NOMBRE: No has puesto nada");
+            $error = true;
+        }
+
+        Memory::keep('name',$a);
+
+        if (!$error){
+            ErrorForm::addFeedback_Form('name', true);
+            return true;
+        }else{
+            ErrorForm::addFeedback_Form('name', false);
+            return false;
+        }
     }
 
     public static function Apellidos($a = null)
     {
-        if ($a) {
-            $a = self::clean($a);
+        $error = false;
+        if (isset($a)){
+            if (!empty($a)){
+                $a = self::clean($a);
+                $patron = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u";
+                //El patron permite apellidos como "Mathias d'Arras "Martin Luther King, Jr." o "Hector Sausage-Hausen"
+                if (! preg_match($patron, $a)) {
+                    ErrorForm::addNegative("APELLIDOS: No se admiten números");
+                    $error = true;
+                }
+            }else{
+                ErrorForm::addNegative("APELLIDOS: Está vacío");
+                $error = true;
+            }
+        }else{
+            ErrorForm::addNegative("APELLIDOS: No has puesto nada");
+            $error = true;
+        }
+
+        Memory::keep('lastname',$a);
+
+        if (!$error){
+            ErrorForm::addFeedback_Form('lastname', true);
+            return true;
+        }else{
+            ErrorForm::addFeedback_Form('lastname', false);
+            return false;
         }
     }
 

@@ -33,8 +33,9 @@
                                             <div class="input-group">
 
                                                 <div class="input-group-addon"><i class="fa fa-ticket"></i></div>
-                                                <div class="col-md-6" style="padding:0px">
+                                                <div class="col-md-6 <?=(!ErrorForm::status('nick'))?'has-error':'has-success';?>" style="padding:0px">
                                                     <input type="text" name="nick" value="<?=($_POST) ? $nick :'';?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
+                                                    <?=(!ErrorForm::status('nick'))?'<span class="glyphicon glyphicon-remove form-control-feedback"></span>':'<span class="glyphicon glyphicon-ok form-control-feedback"></span>';?>
                                                 </div>
                                                 <div class="col-md-3" id="available_nick" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
@@ -47,11 +48,10 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                                <div class="col-md-12" style="padding:0px">
-                                                    <input type="text" name="name" required class="form-control" id="name" placeholder="Nombre" style="width: 30%">
-
-
-                                                    <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Apellidos" style="margin-left:10px;width: 50%">
+                                                <div class="col-md-12 <?=(!ErrorForm::status('name') || !ErrorForm::status('lastname'))?'has-error':'has-success';?>" style="padding:0px">
+                                                    <input type="text" name="name" value="<?=($_POST) ? $name :'';?>" class="form-control" id="name" placeholder="Nombre" style="width: 30%">
+                                                    <input type="text" name="lastname" value="<?=($_POST) ? $lastname :'';?>" class="form-control" id="lastname" placeholder="Apellidos" style="margin-left:10px;width: 50%">
+                                                    <?=(!ErrorForm::status('name') || !ErrorForm::status('lastname'))?'<span class="glyphicon glyphicon-remove form-control-feedback"></span>':'<span class="glyphicon glyphicon-ok form-control-feedback"></span>';?>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,3 +121,4 @@
     </div>
 
 </div>
+

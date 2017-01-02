@@ -16,6 +16,8 @@ class Signup extends Controller
             parent::Go('Comienza a Innovar· Innova Side World','signup/index');
         else:
             Validate::Nick($_POST['nick']);
+            Validate::Apellidos($_POST['lastname']);
+            Validate::Nombre($_POST["name"]);
             parent::Go('Comienza a Innovar · Innova Side World', 'signup/index');
 
         endif;

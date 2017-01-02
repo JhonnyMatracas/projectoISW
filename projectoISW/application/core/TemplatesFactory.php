@@ -12,6 +12,7 @@ class TemplatesFactory
 			TemplatesFactory::$templates->registerFunction('borrar_msg_feedback', function(){
 								Session::set('feedback_positive', null);
 								Session::set('feedback_negative', null);
+                                Session::set('fb_form', null);
 							});
 		}
 		return TemplatesFactory::$templates;
