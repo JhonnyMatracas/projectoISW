@@ -7661,3 +7661,10 @@ div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_
     left: 20%;
     opacity: 0.8;
 }
+
+.feedback_input_form{
+    color: red;
+    list-style-type: none;
+    margin-left: 13px;
+    margin-bottom: 0px;
+}

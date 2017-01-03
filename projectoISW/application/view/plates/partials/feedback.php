@@ -1,5 +1,4 @@
-<?php if (! is_null(Session::get("feedback_negative")) &&
-					count(Session::get("feedback_negative")) > 0) : ?>
+<?php if (! is_null(Session::get("feedback_negative")) && count(Session::get("feedback_negative")) > 0) : ?>
 
 	<div class="alert alert-danger alert-dismissable" hidden>
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

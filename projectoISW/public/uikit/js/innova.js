@@ -3,10 +3,8 @@ $( document ).ready(function() {
     $(".alert").slideDown(700);
 
     window.setTimeout(function() {
-        $(".alert").fadeTo(1500, 0).slideDown(500, function(){
-            $(this).remove();
-        });
-    }, 7000);
+        $(".alert").fadeTo(1500, 750);
+    }, 20000);
 });
 
 

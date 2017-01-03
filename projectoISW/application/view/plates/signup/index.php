@@ -1,14 +1,13 @@
 <?php $this->layout('layout') ?>
-
 <div>
-    <div class="product-container" style="height: 80rem;">
+    <div class="product-container">
         <!-- Vcenter -->
         <div class="vcenter" >
 
             <div class="vcenter-this">
                 <!-- Container -->
 
-                <div class="container" style="margin-top: -20%">
+                <div class="container" style="margin-top: 17%;">
                     <!-- Error Block -->
 
                     <div class="error-block wider">
@@ -33,10 +32,11 @@
                                             <div class="input-group">
 
                                                 <div class="input-group-addon"><i class="fa fa-ticket"></i></div>
-                                                <div class="col-md-6 <?=(!ErrorForm::status('nick'))?'has-error':'has-success';?>" style="padding:0px">
-                                                    <input type="text" name="nick" value="<?=($_POST) ? $nick :'';?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
-                                                    <?=(!ErrorForm::status('nick'))?'<span class="glyphicon glyphicon-remove form-control-feedback"></span>':'<span class="glyphicon glyphicon-ok form-control-feedback"></span>';?>
+                                                <div class="col-md-6 <?=Feedback::cssFeedback('nick')?>" style="padding:0px">
+                                                    <input type="text" name="nick" value="<?=($_POST)?$nick:'';?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
+                                                    <?=Feedback::iconFeedback('nick')?>
                                                 </div>
+
                                                 <div class="col-md-3" id="available_nick" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
                                                 </div>
@@ -44,23 +44,29 @@
                                                     <i class="fa fa-times" style="color: #A70000;font-size: 3rem"></i>
                                                 </div>
                                             </div>
+                                            <?=Feedback::getInputMessage('nick')?>
                                         </div>
+
+
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                                <div class="col-md-12 <?=(!ErrorForm::status('name') || !ErrorForm::status('lastname'))?'has-error':'has-success';?>" style="padding:0px">
-                                                    <input type="text" name="name" value="<?=($_POST) ? $name :'';?>" class="form-control" id="name" placeholder="Nombre" style="width: 30%">
+                                                <div class="col-md-12 <?=Feedback::cssFeedback('name','lastname')?>" style="padding:0px">
+                                                    <input type="text" name="name" value="<?=($_POST) ? $name :'';?>" class="form-control" id="name" placeholder="Nombre" style="width: 35%">
                                                     <input type="text" name="lastname" value="<?=($_POST) ? $lastname :'';?>" class="form-control" id="lastname" placeholder="Apellidos" style="margin-left:10px;width: 50%">
-                                                    <?=(!ErrorForm::status('name') || !ErrorForm::status('lastname'))?'<span class="glyphicon glyphicon-remove form-control-feedback"></span>':'<span class="glyphicon glyphicon-ok form-control-feedback"></span>';?>
+                                                    <?=Feedback::iconFeedback('name','lastname')?>
                                                 </div>
                                             </div>
+                                            <?=Feedback::getInputMessage('name')?>
+                                            <?=Feedback::getInputMessage('lastname')?>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-envelope "></i></div>
-                                                <div class="col-md-9" style="padding:0px">
-                                                    <input type="email" name="email" required class="form-control" id="new_email" placeholder="Email">
+                                                <div class="col-md-9 <?=Feedback::cssFeedback('email')?>" style="padding:0px">
+                                                    <input name="email" value="<?=($_POST) ? $email :'';?>" required class="form-control" id="new_email" placeholder="Email">
+                                                    <?=Feedback::iconFeedback('email')?>
                                                 </div>
                                                 <div class="col-md-3" id="nice_email" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
@@ -69,14 +75,17 @@
                                                     <i class="fa fa-times" style="color: #A70000;font-size: 3rem"></i>
                                                 </div>
                                             </div>
+                                            <?=Feedback::getInputMessage('email')?>
+
                                         </div>
 
                                         <div class="form-group">
 
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                                <div class="col-md-6" style="padding:0px">
-                                                    <input type="password" class="form-control" placeholder="Contraseña" id="new_pass1" name="pass1" value="">
+                                                <div class="col-md-6 <?=Feedback::cssFeedback('password')?>" style="padding:0px">
+                                                    <input type="password" class="form-control" placeholder="Contraseña" id="new_pass1" name="password" value="">
+                                                    <?=Feedback::iconFeedback('password')?>
                                                 </div>
                                                 <div class="col-md-3" id="nice_pass" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
@@ -85,13 +94,15 @@
                                                     <i class="fa fa-times" style="color: #A70000;font-size: 3rem"></i>
                                                 </div>
                                             </div>
+                                            <?=Feedback::getInputMessage('password')?>
+
                                             <em class="help" id="pass_error" style="font-style: normal; color: red;margin-top:-10px;" hidden></em>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                                 <div class="col-md-6" style="padding:0px">
-                                                    <input class="form-control" placeholder="Repite Contraseña" id="new_pass2" name="pass2" type="password">
+                                                    <input class="form-control" placeholder="Repite Contraseña" id="new_pass2" name="password2" type="password">
                                                 </div>
                                                 <div class="col-md-3" id="nice_pass2" hidden>
                                                     <i class="fa fa-check" style="color: #00A743;font-size: 3rem"></i>
@@ -100,6 +111,8 @@
                                                     <i class="fa fa-times" style="color: #A70000;font-size: 3rem"></i>
                                                 </div>
                                             </div>
+                                            <?=Feedback::getInputMessage('password2')?>
+
                                             <em class="help" id="pass_error2" style="font-style: normal; color: red;margin-top:-10px;" hidden></em>
                                         </div>
                                         <input class="btn btn-buy btn-block disabled" id="submit" type="submit" value="Crear Cuenta">
