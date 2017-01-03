@@ -71,5 +71,30 @@ sudo mysql -h "localhost" -u "root" "-p${PASSWORD}" < "/var/www/html/${PROJECTFO
 # put the password into the application's config. This is quite hardcore, but why not :)
 sudo sed -i "s/your_password/${PASSWORD}/" "/var/www/html/${PROJECTFOLDER}/application/config/config.php"
 
+#Aqui empieza la instalacion de PHP7
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get -y update
+sudo apt-get install -y php7.0
+sudo apt-get install -y php7.0-mysql
+sudo apt-get install -y php7.0-mbstring
+sudo a2dismod php5
+sudo a2enmod php7.0
+sudo service apache2 restart
+
+
 # final feedback
-echo "Voila!"
+echo ''
+echo '--------------------------------------------------------------------'
+echo '                       MINI: PHP 7 EDITION                          '
+echo '--------------------------------------------------------------------'
+echo ''
+echo '                 Modificación por Fernando Meseguer'
+echo '                 -----------------------------------                '
+echo ''
+echo '              Todos los derechos reservados a Panique               '
+echo '               Y a todos sus colaboradores de GITHUB                '
+echo ''
+echo '  Podéis descargar MINI original en https://github.com/panique/mini '
+echo '--------------------------------------------------------------------'
+echo '                             Voila!'
+echo '--------------------------------------------------------------------'
