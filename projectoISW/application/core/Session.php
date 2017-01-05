@@ -40,6 +40,24 @@ class Session
         $_SESSION[$key][$subkey] = $value;
 
     }
+    public static function addVector($a,$b, $value) {
+
+        $_SESSION[$a][$b][] = $value;
+
+    }
+    public static function getOne($a,$b)
+    {
+        if (isset($_SESSION[$a][$b]))
+            return $_SESSION[$a][$b];
+    }
+    public static function delFormData(){
+        self::set('feedback_positive', null);
+        self::set('feedback_negative', null);
+        self::set('fb_form', null);
+        self::set('memory_form', null);
+        self::set('input_message', null);
+        self::set('input_value', null);
+    }
 	public static function destroy() {
 
 		session_destroy();

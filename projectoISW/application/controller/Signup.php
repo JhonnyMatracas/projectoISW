@@ -15,8 +15,19 @@ class Signup extends Controller
         if(!$_POST):
             parent::Go('Comienza a Innovar· Innova Side World','signup/index');
         else:
-            Validate::Signup();
-            parent::Go('Comienza a Innovar · Innova Side World', 'signup/index');
+            Memory::keepAllPost();
+            if (Validate::AutoSignup()){
+                //hacer un new User si existe en la base de datos insertar si no iniciar sesion
+                Session::delFormData();
+                header('Location: home');
+                Feedback::addPositive('<b>Bienvenido</b> a Innova Side World!');
+            }else{
+                parent::Go('Comienza a Innovar · Innova Side World', 'signup/index');
+
+
+
+            }
+
 
         endif;
     }

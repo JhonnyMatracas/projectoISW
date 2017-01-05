@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
     window.setTimeout(function() {
         $(".alert").fadeTo(1500, 750);
-    }, 20000);
+    }, 8000);
 });
 
 

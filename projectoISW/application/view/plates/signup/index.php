@@ -25,15 +25,15 @@
                         <div class="right">
                             <div class="col-xs-12">
 
-                                <form accept-charset="UTF-8" role="form" method="post" action="">
-                                    <fieldset>
+                                <form accept-charset="UTF-8" role="form" method="post" action="" autocomplete="off">
+
                                         <div class="form-group">
                                             <em class="help" id="nick_error" style="font-style: normal; color: red" hidden></em>
                                             <div class="input-group">
 
                                                 <div class="input-group-addon"><i class="fa fa-ticket"></i></div>
                                                 <div class="col-md-6 <?=Feedback::cssFeedback('nick')?>" style="padding:0px">
-                                                    <input type="text" name="nick" value="<?=($_POST)?$nick:'';?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
+                                                    <input type="text" name="nick" value="<?=Memory::getValue('nick');?>" class="form-control" required id="new_nick" placeholder="Nombre de usuario">
                                                     <?=Feedback::iconFeedback('nick')?>
                                                 </div>
 
@@ -52,8 +52,8 @@
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
                                                 <div class="col-md-12 <?=Feedback::cssFeedback('name','lastname')?>" style="padding:0px">
-                                                    <input type="text" name="name" value="<?=($_POST) ? $name :'';?>" class="form-control" id="name" placeholder="Nombre" style="width: 35%">
-                                                    <input type="text" name="lastname" value="<?=($_POST) ? $lastname :'';?>" class="form-control" id="lastname" placeholder="Apellidos" style="margin-left:10px;width: 50%">
+                                                    <input type="text" name="name" value="<?=Memory::getValue('name')?>" class="form-control" id="name" placeholder="Nombre" style="width: 35%">
+                                                    <input type="text" name="lastname" value="<?=Memory::getValue('lastname');?>" class="form-control" id="lastname" placeholder="Apellidos" style="margin-left:10px;width: 50%">
                                                     <?=Feedback::iconFeedback('name','lastname')?>
                                                 </div>
                                             </div>
@@ -65,7 +65,7 @@
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-envelope "></i></div>
                                                 <div class="col-md-9 <?=Feedback::cssFeedback('email')?>" style="padding:0px">
-                                                    <input name="email" value="<?=($_POST) ? $email :'';?>" required class="form-control" id="new_email" placeholder="Email">
+                                                    <input name="email" value="<?=Memory::getValue('email');?>" required class="form-control" id="new_email" placeholder="Email">
                                                     <?=Feedback::iconFeedback('email')?>
                                                 </div>
                                                 <div class="col-md-3" id="nice_email" hidden>
@@ -116,7 +116,6 @@
                                             <em class="help" id="pass_error2" style="font-style: normal; color: red;margin-top:-10px;" hidden></em>
                                         </div>
                                         <input class="btn btn-buy btn-block disabled" id="submit" type="submit" value="Crear Cuenta">
-                                    </fieldset>
                                 </form>
 
 

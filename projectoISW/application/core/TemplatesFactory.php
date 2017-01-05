@@ -13,6 +13,9 @@ class TemplatesFactory
 								Session::set('feedback_positive', null);
 								Session::set('feedback_negative', null);
                                 Session::set('fb_form', null);
+                                Session::set('memory_form', null);
+                                Session::set('input_message', null);
+                                Session::set('input_value', null);
 							});
 		}
 		return TemplatesFactory::$templates;

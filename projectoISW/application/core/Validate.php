@@ -20,27 +20,26 @@ class Validate
         $error = false;
         if (!is_null($a)) {
             if (!empty($a)) {
-                $usrname = self::clean($a);
+                $a = self::clean($a);
                 $contieneLetras = "/[a-zA-Z]/";
-                $contieneNumeros = "/\d/";
-                if (strlen($usrname) < 6) {
+                if (strlen($a) < 6) {
                     Feedback::addInputMessage('nick',"Debe contener minimo 6 caracteres");
                     $error = true;
                 }
-                if (strlen($usrname) > 25) {
+                if (strlen($a) > 25) {
                     Feedback::addInputMessage('nick',"Debe contener máximo 25 caracteres");
                     $error = true;
                 }
-                if (!preg_match($contieneLetras, $usrname)) {
-                    Feedback::addInputMessage('nick',"NICK: Debe contener letras");
+                if (!preg_match($contieneLetras, $a)) {
+                    Feedback::addInputMessage('nick',"Debe contener letras");
                     $error = true;
                 }
-                if (!preg_match($contieneNumeros, $usrname)) {
-                    Feedback::addInputMessage('nick',"Debe contener mínimo un número");
+                if (filter_var($a, FILTER_VALIDATE_EMAIL)) {
+                    Feedback::addInputMessage('nick',"No puede ser un correo electronico");
                     $error = true;
                 }
-                Memory::keep('nick', $a);
             } else {
+
                 Feedback::addInputMessage('nick',"Está vacío");
                 $error = true;
             }
@@ -71,7 +70,9 @@ class Validate
                     Feedback::addInputMessage('name',"El nombre debe contener letras");
                     $error = true;
                 }
+
             }else{
+
                 Feedback::addInputMessage('name',"El nombre está vacío");
                 $error = true;
             }
@@ -80,7 +81,7 @@ class Validate
             $error = true;
         }
 
-        Memory::keep('name',$a);
+
 
         if (!$error){
             Feedback::addFeedback_Form('name', true);
@@ -107,7 +108,6 @@ class Validate
                     Feedback::addInputMessage('lastname',"Introduce unos apellidos reales");
                     $error = true;
                 }
-                Memory::keep('lastname', $a);
             } else {
                 Feedback::addInputMessage('lastname',"El apellido está vacío");
                 $error = true;
@@ -141,11 +141,12 @@ class Validate
                 Feedback::addInputMessage('email',"El email está vacío");
                 $error = true;
             }
+
+
         }else{
             Feedback::addInputMessage('email',"El email está vacío");
             $error = true;
         }
-        Memory::keep('email',$a);
 
         if (!$error){
             Feedback::addFeedback_Form('email', true);
@@ -169,6 +170,14 @@ class Validate
                     Feedback::addInputMessage('password',"Debe contener mínimo 8 caracteres");
                     $error = true;
                 }
+                if(Memory::getValue('nick') === $a){
+                    Feedback::addInputMessage('password',"La contraseña no puede ser tu nick");
+                    $error = true;
+                }
+                if(filter_var($a, FILTER_VALIDATE_EMAIL)){
+                    Feedback::addInputMessage('password',"La contraseña no puede ser tu email");
+                    $error = true;
+                }
                 if (strlen($a) > 30) {
                     Feedback::addInputMessage('password',"Debe contener máximo 30 caracteres");
                     $error = true;
@@ -184,6 +193,10 @@ class Validate
                 if (!self::ConfirmPassword($a,$b)){
                     $error = true;
                 }
+                if (Memory::getValue('nick')===$a ||Memory::getValue('nick') === $b){
+                    Feedback::addInputMessage('password',"No puede ser igual que tu nick");
+                    $error = true;
+                }
             } else {
                 Feedback::addInputMessage('password',"Esta vacía");
                 $error = true;
@@ -193,10 +206,10 @@ class Validate
             $error = true;
         }
         if (!$error){
-            Feedback::addFeedback_Form('password', true);
+            //Feedback::addFeedback_Form('password', true);
             return true;
         }else{
-            Feedback::addFeedback_Form('password', false);
+            //Feedback::addFeedback_Form('password', false);
             return false;
         }
     }
@@ -211,11 +224,11 @@ class Validate
                         $error = true;
                     }
                 }else{
-                    Feedback::addInputMessage('password2',"Esta vacía ");
+                    Feedback::addInputMessage('password2',"Por favor, repite la contraseña ");
                     $error = true;
                 }
         }else{
-            Feedback::addInputMessage('password2',"Esta vacía");
+            Feedback::addInputMessage('password2',"Tienes que repetir la contraseña");
             $error = true;
         }
 
@@ -230,7 +243,6 @@ class Validate
         if (isset($_POST[$a]))
             return self::valida($a,$b);
         else {
-            Memory::keep($a,'');
             $a = strtoupper($a);
             Feedback::addNegative("$a: No has puesto nada");
         }
@@ -256,7 +268,12 @@ class Validate
 
                 case 'password':
                     return self::Password($_POST[$a],$_POST[$b]);
-
+                case 'password2':
+                    return true;
+                default:
+                    Memory::delFormData();
+                    Feedback::addNegative("Estructura del formulario dudosa, extreme la <b>precaución</b>");
+                    return false;
 
             }
         }
@@ -264,17 +281,41 @@ class Validate
 
     public static function Signup()
     {
+        $signup = true;
 
-        self::check('nick');                /*VALIDACION DEL NICK*/
+        if (!self::check('nick')){
+            $signup =  false;
+        }
+        if (!self::check('name')){
+            $signup =  false;
+        }
+        if (!self::check('lastname')){
+            $signup =  false;
+        }
+        if (!self::check('email')){
+            $signup =  false;
+        }
+        if (!self::check('password','password2')){
+            $signup =  false;
+        }
+        return $signup;
 
-        self::check('name');                /*VALIDACION DEL NOMBRE*/
+    }
 
-        self::check('lastname');            /*VALIDACION DE LOS APELLIDOS*/
+    public static function AutoSignup(){
+        $signup = true;
 
-        self::check('email');               /*VALIDACION DEL EMAIL*/
-
-        self::check('password','password2');            /*VALIDACION DEL PASSWORD*/
-
-
+        foreach($_POST as $nombre_campo => $valor){
+            if ($nombre_campo != 'password'){
+                if (!self::check($nombre_campo)){
+                    $signup = false;
+                }
+            }else{
+                if (!self::check($nombre_campo,'password2')){
+                    $signup = false;
+                }
+            }
+        }
+        return $signup;
     }
 }
