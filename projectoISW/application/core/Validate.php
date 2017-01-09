@@ -26,6 +26,10 @@ class Validate
                     Feedback::addInputMessage('nick',"Debe contener minimo 6 caracteres");
                     $error = true;
                 }
+                if(UserModel::NickExist($a)){
+                    Feedback::addInputMessage('nick',"Este nick ya esta en uso");
+                    $error = true;
+                }
                 if (strlen($a) > 25) {
                     Feedback::addInputMessage('nick',"Debe contener máximo 25 caracteres");
                     $error = true;
@@ -137,6 +141,10 @@ class Validate
                     Feedback::addInputMessage('email',"El email no es válido");
                     $error = true;
                 }
+                if(UserModel::EmailExist($a)){
+                    Feedback::addInputMessage('email',"Este email ya esta en uso");
+                    $error = true;
+                }
             } else {
                 Feedback::addInputMessage('email',"El email está vacío");
                 $error = true;
@@ -206,6 +214,7 @@ class Validate
             $error = true;
         }
         if (!$error){
+            Memory::keep('password',$a);
             //Feedback::addFeedback_Form('password', true);
             return true;
         }else{
@@ -243,8 +252,7 @@ class Validate
         if (isset($_POST[$a]))
             return self::valida($a,$b);
         else {
-            $a = strtoupper($a);
-            Feedback::addNegative("$a: No has puesto nada");
+            Feedback::addInputMessage($a,"No has puesto nada");
         }
     }
 
@@ -254,6 +262,9 @@ class Validate
             Feedback::addNegative("ERROR: Ha sido imposible validar");
         }else{
             switch ($a){
+                default:
+                    Feedback::addNegative("Estructura del formulario dudosa, extreme la <b>precaución</b>");
+                    return false;
                 case 'nick':
                     return self::Nick($_POST[$a]);
 
@@ -270,10 +281,6 @@ class Validate
                     return self::Password($_POST[$a],$_POST[$b]);
                 case 'password2':
                     return true;
-                default:
-                    Memory::delFormData();
-                    Feedback::addNegative("Estructura del formulario dudosa, extreme la <b>precaución</b>");
-                    return false;
 
             }
         }

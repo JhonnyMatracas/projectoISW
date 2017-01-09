@@ -3,14 +3,14 @@
 class Database
 {
 	private static $instancia = null;
-	private $db = null;
+	private static $db = null;
 
 	private function __construct() {
 
 		$options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
 					PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
 		try {
-			$this->db = new PDO(DB_TYPE . ':host=' .
+			self::$db = new PDO(DB_TYPE . ':host=' .
 							DB_HOST . ';dbname=' . 
 							DB_NAME . ';charset=' . 
 							DB_CHARSET, 
@@ -34,8 +34,43 @@ class Database
 
 	}
 
-	public function getDatabase() {
-
-		return $this->db;
+	public static function getDatabase() {
+        self::getInstance();
+		return self::$db;
 	}
+
+	public static function FetchOne($sql,$params = null)
+    {
+        try {
+            $q = self::getDatabase()->prepare($sql);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+        ($params)?$q->execute($params):$q->execute();
+        return $q->fetch();
+    }
+    public static function FetchAll($sql,$params = null)
+    {
+        try {
+            $q = self::getDatabase()->prepare($sql);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+        ($params)?$q->execute($params):$q->execute();
+        return $q->fetchAll();
+    }
+
+    public static function exe($sql,$params = null)
+    {
+        try {
+            $q = self::getDatabase()->prepare($sql);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+        if(!is_null($params)){
+            return $q->execute($params);
+        }else{
+            return $q->execute();
+        }
+    }
 }

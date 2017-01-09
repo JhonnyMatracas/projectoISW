@@ -16,15 +16,13 @@ class Signup extends Controller
             parent::Go('Comienza a Innovar· Innova Side World','signup/index');
         else:
             Memory::keepAllPost();
-            if (Validate::AutoSignup()){
+            if (Validate::Signup()){
                 //hacer un new User si existe en la base de datos insertar si no iniciar sesion
-                Session::delFormData();
                 header('Location: home');
-                Feedback::addPositive('<b>Bienvenido</b> a Innova Side World!');
+                new User(Memory::getValue('nick'),Memory::getValue('password'),Memory::getValue('name'),Memory::getValue('lastname'),Memory::getValue('email'));
+                Session::delFormData();
             }else{
                 parent::Go('Comienza a Innovar · Innova Side World', 'signup/index');
-
-
 
             }
 

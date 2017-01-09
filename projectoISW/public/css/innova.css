@@ -7681,6 +7681,7 @@ div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_
 
 .alert ul{
     list-style-type: none;
+    padding-right: 25px;
     padding-left: 8px;
 }
 

@@ -27,5 +27,4 @@
         </ul>
     </div>
 <?php endif ?>
-
-<?php $this->borrar_msg_feedback() ?>
+<?=Session::delMessages()?>

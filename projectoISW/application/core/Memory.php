@@ -18,13 +18,12 @@ class Memory extends Session
     {
         if (parent::getOne('input_value',$a))
             return parent::getOne('input_value',$a);
-        else
-            return '';
     }
 
     public static function keepAllPost()
     {
         foreach($_POST as $nombre_campo => $valor){
+            $valor = Validate::clean($valor);
             parent::addOne('input_value',$nombre_campo,$valor);
         }
 
