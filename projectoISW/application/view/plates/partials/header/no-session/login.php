@@ -88,37 +88,38 @@
 
                     <!-- Nav Right -->
                     <ul class="nav navbar-nav navbar-right case-u active-bcolor navbar-center-xs">
-                        <li class="dropdown has-panel li-nosession">
+                        <li class="dropdown has-panel li-nosession <?=(Feedback::cssFeedback('login') == 'has-error')?'open':'';?>">
                             <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user hidden-lg"></i><i class="hidden-xs hidden-sm hidden-md" style="font-style: normal; text-transform: capitalize;"> Inicia Sesion</i><i class="fa fa-angle-down toggler hidden-xs hidden-sm"></i></a>
 
                             <!-- Dropdown Panel -->
-                            <div class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" data-keep-open="true">
+                            <div class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs <?=Feedback::cssFeedback('login')?>" data-keep-open="true">
 
-                                <form accept-charset="UTF-8" role="form" method="post" action="<?=URL?>index/processlogin">
+                                <form accept-charset="UTF-8" role="form" method="post" action="<?=URL?>login">
                                     <fieldset>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                                <input class="form-control" placeholder="Usuario" name="mail" type="text" placeholder="Username o Email">
+                                                <input class="form-control" placeholder="Usuario" name="user" value="<?=Memory::getValue('user');?>" type="text" placeholder="Username o Email">
+                                                <?=Feedback::iconFeedback('login')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                                <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
+                                                <input class="form-control" placeholder="Contraseña" name="pass" type="password" value="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="checkbox-inline"><input value="" type="checkbox">Recuérdame </label>
                                         </div>
                                         <input class="btn btn-primary btn-block" type="submit" value="Iniciar Sesion">
+
                                     </fieldset>
                                 </form>
-
                             </div>
                             <!-- /Dropdown Panel -->
                         </li>
-
+                        <?=(!Feedback::status('login'))?Session::delFormData():'';?>
                         <li class="dropdown has-panel li-nosession">
 
                             <a aria-expanded="false" href="<?=URL?>signup"><i class="fa fa-edit hidden-lg"></i><i class="hidden-xs hidden-sm hidden-md" style="font-style: normal; text-transform: capitalize;"> Registrate</i></a>

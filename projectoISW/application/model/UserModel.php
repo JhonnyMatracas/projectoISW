@@ -18,16 +18,14 @@ class UserModel extends Model
     protected $lastname;
     protected $email;
 
-    public function __construct($nick = null,$pass = null,$name = null,$lastname = null, $email = null)
+    private function __construct($nick = null,$pass = null,$name = null,$lastname = null, $email = null)
     {
         $this->nick = $nick;
-        $this->pass= password_hash($pass,PASSWORD_DEFAULT,['cost'=>15]);
+        $this->pass= $pass;
+        $this->pass=$pass;
         $this->name =$name;
         $this->lastname = $lastname;
         $this->email = $email;
-        if (!$this->exists()) {
-            ($this->addUser())?Feedback::addPositive('<b>Bienvenido</b> a Innova Side World, '.$this->name.'! Revisa tu correo y <b>activa tu cuenta</b> para iniciar sesion'):Feedback::addNegative('No se ha podido insertar');
-        }
     }
 
     public static function getModel($nick = null,$pass = null,$name = null,$lastname = null, $email = null)
@@ -38,28 +36,50 @@ class UserModel extends Model
 
         return self::$model;
     }
-
+    public static function UserExist($user,$pass)
+    {
+        $sql = "SELECT id FROM ".self::$table." WHERE nick=:nick";
+        $q = self::FetchOne($sql,[':nick'=>$user]);
+        if (isset($q->id))
+            return $q->id;
+        else
+            return null;
+    }
     public static function NickExist($nick)
     {
 
-        $sql = "SELECT COUNT(id) as count FROM ".self::$table." WHERE nick=:nick";
+        $sql = "SELECT id FROM ".self::$table." WHERE nick=:nick";
         $q = self::FetchOne($sql,[':nick'=>$nick]);
-
-        ($q->count > 0)?$exist = true:$exist = false;
-
-        return $exist;
+        if (isset($q->id))
+            return $q->id;
+        else
+            return null;
 
     }
 
     public static function EmailExist($email)
     {
 
-        $sql = "SELECT COUNT(usr_id) as count FROM ".self::$table2." WHERE email=:email";
+        $sql = "SELECT usr_id as id FROM ".self::$table2." WHERE email=:email";
         $q = self::FetchOne($sql,[':email'=>$email]);
+        if (isset($q->id))
+            return $q->id;
+        else
+            return null;
 
-        ($q->count > 0)?$exist = true:$exist = false;
 
-        return $exist;
+    }
+    public static function getUser($user)
+    {
+        $sql = "SELECT DISTINCT id,nick,pass,name,lastname,email,created_at,updated_at FROM ".self::$table.",".self::$table2." WHERE id=usr_id and ";
+
+        (filter_var($user,FILTER_VALIDATE_EMAIL)) ? $sql .= "email=:user" : $sql .= "nick=:user";
+
+        $q = self::FetchOne($sql,[':user'=>$user]);
+        if (isset($q->id))
+            return $q;
+        else
+            return null;
 
     }
     public function exists()

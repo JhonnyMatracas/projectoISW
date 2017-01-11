@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+
 <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-tabs-line-bottom line-pcolor nav-tabs-center case-u" role="tablist">
     <li class="active"><a href="#tab-nuevos" data-toggle="tab">Nuevos</a></li>

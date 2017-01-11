@@ -56,12 +56,12 @@ sudo apt-get -y install git
 sudo git clone https://github.com/panique/mini "/var/www/html/${PROJECTFOLDER}"
 
 # install Composer (not necessary by default)
-#curl -s https://getcomposer.org/installer | php
-#mv composer.phar /usr/local/bin/composer
+curl -s https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 
 # go to project folder, load Composer packages (not necessary by default)
-#cd "/var/www/html/${PROJECTFOLDER}"
-#composer install --dev
+cd "/var/www/html/${PROJECTFOLDER}"
+composer install --dev
 
 # run SQL statements from MINI folder
 sudo mysql -h "localhost" -u "root" "-p${PASSWORD}" < "/var/www/html/${PROJECTFOLDER}/_install/01-create-database.sql"

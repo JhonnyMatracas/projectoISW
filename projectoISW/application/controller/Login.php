@@ -10,11 +10,13 @@ class Login extends Controller
 {
     public function index()
     {
-        if (! $_POST){
-            $this->view->render("login/index",["titulo" => "MasterLogin"]);
-        }else{
-            echo $_POST["nick"];
+        Memory::keepAllPost();
+        if (Validate::Login()) {
+            Memory::delFormData();
         }
+        header('Location: /home');
+
+
 
     }
 }

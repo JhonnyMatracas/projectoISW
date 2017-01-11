@@ -15,7 +15,42 @@ class Validate
         return $a;
     }
 
-    public static function Nick($a = null)
+    public static function Login()
+    {
+        $user = Memory::getValue('user');
+        $pass = Memory::getValue('pass');
+        $error = false;
+        if (!is_null($user) && !is_null($pass)) {
+            if (!empty($user) && !empty($pass)) {
+                $usr = UserModel::getUser($user);
+                if (!is_null($usr)){
+                    if (!password_verify($pass,$usr->pass)){
+                        Feedback::addNegative("Los datos introducidos son incorrectos");
+                        $error = true;
+                    }
+                }else{
+                    Feedback::addNegative("Los datos introducidos son incorrectos");
+                    $error = true;
+                }
+            } else {
+
+                Feedback::addNegative("Debes introducir tu nick o email y la contraseña");
+                $error = true;
+            }
+        }else{
+            Feedback::addNegative("Debes introducir tu nick o email y la contraseña");
+            $error = true;
+        }
+        if (!$error){
+            Feedback::addPositive("<b>Bienvenido</b> de nuevo, $usr->name !");
+            Feedback::addFeedback_Form('login', true);
+            return true;
+        }else{
+            Feedback::addFeedback_Form('login', false);
+            return false;
+        }
+    }
+    public static function SignUp_Nick($a = null)
     {
         $error = false;
         if (!is_null($a)) {
@@ -60,7 +95,7 @@ class Validate
         }
 
     }
-    public static function Name($a = null)
+    public static function SignUp_Name($a = null)
     {
         $error = false;
         if (!is_null($a)){
@@ -96,7 +131,7 @@ class Validate
         }
     }
 
-    public static function Lastname($a = null)
+    public static function SignUp_Lastname($a = null)
     {
         $error = false;
         if (!is_null($a)) {
@@ -131,7 +166,7 @@ class Validate
         }
     }
 
-    public static function Email($a = null)
+    public static function SignUp_Email($a = null)
     {
         $error = false;
         if (!is_null($a)) {
@@ -166,7 +201,7 @@ class Validate
     }
 
 
-    public static function Password($a = null,$b = null)
+    public static function SignUp_Password($a = null, $b = null)
     {
         $error = false;
         if (!is_null($a)) {
@@ -266,19 +301,20 @@ class Validate
                     Feedback::addNegative("Estructura del formulario dudosa, extreme la <b>precaución</b>");
                     return false;
                 case 'nick':
-                    return self::Nick($_POST[$a]);
+                    return self::SignUp_Nick($_POST[$a]);
 
                 case 'name':
-                    return self::Name($_POST[$a]);
+                    return self::SignUp_Name($_POST[$a]);
 
                 case 'lastname':
-                    return self::Lastname($_POST[$a]);
+                    return self::SignUp_Lastname($_POST[$a]);
 
                 case 'email':
-                    return self::Email($_POST[$a]);
+                    return self::SignUp_Email($_POST[$a]);
 
                 case 'password':
-                    return self::Password($_POST[$a],$_POST[$b]);
+                    return self::SignUp_Password($_POST[$a],$_POST[$b]);
+
                 case 'password2':
                     return true;
 
@@ -290,25 +326,24 @@ class Validate
     {
         $signup = true;
 
-        if (!self::check('nick')){
+        if (!self::check('nick'))
             $signup =  false;
-        }
-        if (!self::check('name')){
+
+        if (!self::check('name'))
             $signup =  false;
-        }
-        if (!self::check('lastname')){
+
+        if (!self::check('lastname'))
             $signup =  false;
-        }
-        if (!self::check('email')){
+
+        if (!self::check('email'))
             $signup =  false;
-        }
-        if (!self::check('password','password2')){
+
+        if (!self::check('password','password2'))
             $signup =  false;
-        }
+
         return $signup;
 
     }
-
     public static function AutoSignup(){
         $signup = true;
 

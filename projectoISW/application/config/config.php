@@ -54,7 +54,7 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'mini');
+define('DB_NAME', 'isw');
 define('DB_USER', 'root');
 define('DB_PASS', '123');
 define('DB_CHARSET', 'utf8');

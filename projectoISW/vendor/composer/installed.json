@@ -17,7 +17,7 @@
         "require": {
             "php": ">=5.1.0"
         },
-        "time": "2015-09-16 14:09:00",
+        "time": "2015-09-16T14:09:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -77,7 +77,7 @@
         "suggest": {
             "league/oauth2-google": "Needed for Google XOAUTH2 authentication"
         },
-        "time": "2016-12-09 10:03:48",
+        "time": "2016-12-09T10:03:48+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -134,7 +134,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~1.5"
         },
-        "time": "2015-07-09 02:14:40",
+        "time": "2015-07-09T02:14:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

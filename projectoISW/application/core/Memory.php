@@ -9,6 +9,10 @@
 class Memory extends Session
 {
 
+    public static function delInput($value)
+    {
+        parent::set('');
+    }
     public static function keep($name,$value)
     {
         parent::addOne('input_value',$name,$value);

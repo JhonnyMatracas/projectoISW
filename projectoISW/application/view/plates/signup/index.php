@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+
 <div>
     <div class="product-container">
         <!-- Vcenter -->
@@ -134,3 +135,4 @@
 
 </div>
 
+<?=Session::delFormData()?>
